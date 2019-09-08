@@ -36,3 +36,5 @@ npm Start
 ![Screenshot from 2019-09-08 17-02-42](https://user-images.githubusercontent.com/35691714/64486170-3afd1700-d25c-11e9-88ac-d7ba5f84c44d.png)
 * A Edit box which allows users to edit their tasks name description as well as parentID (Editing parentID for a parent task is disabled as some of the data under the parent task will got lost).
 ![Screenshot from 2019-09-08 17-03-12](https://user-images.githubusercontent.com/35691714/64486203-a1823500-d25c-11e9-852b-ced38cddd1dc.png)
+
+* The application comes with many more features such as pagination, checkbox update the status of the tasks. 
