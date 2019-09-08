@@ -30,11 +30,11 @@ nodemon
 npm Start
 ```
 ## Features
-* Tasker allows users to list their tasks in an hierachy, one depending on the other as shown below. For each parent task there is a graph thats shows the number of tasks completed, tasks done as well the total number of task.
+* The application allows users to list their tasks in an hierachy, one depending on the other as shown below. For each parent task there is a graph thats shows the number of tasks completed, tasks done as well the total number of tasks.
 ![Screenshot from 2019-09-08 17-04-01](https://user-images.githubusercontent.com/35691714/64486228-caa2c580-d25c-11e9-8542-36ba6e559427.png)
-* Allowing users to create tasks and assinging them to a parent Task. A search fild allows users to search by task name, task description and task status.
+* Allowing users to create tasks and assinging them to a parent Task. A search field allows users to search by task name, task description and task status.
 ![Screenshot from 2019-09-08 17-02-42](https://user-images.githubusercontent.com/35691714/64486170-3afd1700-d25c-11e9-88ac-d7ba5f84c44d.png)
-* A Edit box which allows users to edit their tasks name description as well as parentID (Editing parentID for a parent task is disabled as some of the data under the parent task will got lost).
+* An Edit box which allows users to edit the task name, description as well as parentID (Editing parentID for a parent task is disabled as some of the data under the parent task will got lost).
 ![Screenshot from 2019-09-08 17-03-12](https://user-images.githubusercontent.com/35691714/64486203-a1823500-d25c-11e9-852b-ced38cddd1dc.png)
 
-* The application comes with many more features such as pagination, progress bar to show the number of In Progress tasks, checkbox update the status of the tasks. 
+* The application comes with a number of other features such as pagination, progress bar to show the number of In Progress tasks, checkbox update the status of the tasks. 
