@@ -12,8 +12,8 @@ app.use(cors());
 const db = mysql.createConnection({
   host:'localhost',
   user:'root',
-  password:'',
-  database:'Test_Assignment'
+  password:'root',
+  database:'Test_Assignment',
 });
 
 //Connet
@@ -186,6 +186,6 @@ app.post('/editTask',function(req,res,next){
 
 
 
-app.listen('3001',()=>{
-  console.log('Server started on port 3001')
+app.listen('3000',()=>{
+  console.log('Server started on port 3000')
 })
