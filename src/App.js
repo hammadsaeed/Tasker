@@ -65,17 +65,10 @@ checkCompleteTask=(fullTask,pID,pStatus)=>{
       }
     })
     if(counter === fullTask.length){
-<<<<<<< HEAD
     fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/pri/${parentID}`)
       .then(res1=> res1.json())
       .then(function(res1){
         fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${res1[0].ParentID}`)
-=======
-    fetch(`http://localhost:3000/pri/${parentID}`)
-      .then(res1=> res1.json())
-      .then(function(res1){
-        fetch(`http://localhost:3000/second/${res1[0].ParentID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
           .then(res2=> res2.json())
           .then(function(res2){
             var counter = 0
@@ -99,11 +92,7 @@ checkCompleteTask=(fullTask,pID,pStatus)=>{
 handleCheckboxChange = async(fullTask,pID,pStatus)=>{
   console.log(fullTask)
   if(pStatus === "In Progress"){
-<<<<<<< HEAD
     fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/all/${pID}`)
-=======
-    fetch(`http://localhost:3000/all/${pID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
       .then(res1 => res1.json())
       .then(function(res1) {
         console.log(res1)
@@ -119,11 +108,7 @@ handleCheckboxChange = async(fullTask,pID,pStatus)=>{
   }).then(this.checkCompleteTask(fullTask,pID,pStatus));
 
 }else if(pStatus === "Completed"){
-<<<<<<< HEAD
     fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/all/${pID}`)
-=======
-    fetch(`http://localhost:3000/all/${pID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
       .then(res1 => res1.json())
       .then(function(res1) {
 
@@ -131,11 +116,7 @@ handleCheckboxChange = async(fullTask,pID,pStatus)=>{
     if(res1.length === 1){
       changeStatusPri(pID,"In Progress")
       changeStatusPri(res1[0].ParentID,"Done")
-<<<<<<< HEAD
     fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/pri/${res1[0].ParentID}`)
-=======
-    fetch(`http://localhost:3000/pri/${res1[0].ParentID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
       .then(res2 => res2.json())
       .then(function(res2) {
         changeStatusPri(res2[0].ParentID,"Done")
@@ -143,20 +124,12 @@ handleCheckboxChange = async(fullTask,pID,pStatus)=>{
     }else{
       changeStatusPri(fullTask.ParentID,"Done")
       changeStatusPri(pID,"Done")
-<<<<<<< HEAD
       fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${pID}`)
-=======
-      fetch(`http://localhost:3000/second/${pID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
         .then(res2 => res2.json())
         .then(function(res2) {
       res2.forEach(function(item,index){
         changeStatusPri(item.PrimaryID,"In Progress")
-<<<<<<< HEAD
       fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${item.PrimaryID}`)
-=======
-      fetch(`http://localhost:3000/second/${item.PrimaryID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
             .then(res3 => res3.json())
             .then(function(res3) {
               res3.forEach(function(item2,index2){
@@ -169,11 +142,7 @@ handleCheckboxChange = async(fullTask,pID,pStatus)=>{
 })
   //.then(this.checkDoneTask(fullTask,pID,pStatus));
 }else if(pStatus === "Done"){
-<<<<<<< HEAD
   fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/all/${pID}`)
-=======
-  fetch(`http://localhost:3000/all/${pID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
     .then(res1 => res1.json())
     .then(function(res1) {
 // Checking the length if it returns 1 that means no sub tasks
@@ -182,11 +151,7 @@ handleCheckboxChange = async(fullTask,pID,pStatus)=>{
     changeStatusPri(res1.ParentID,"Done")
 }else{
   changeStatusPri(fullTask.ParentID,"Done")
-<<<<<<< HEAD
 fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${fullTask.PrimaryID}`)
-=======
-fetch(`http://localhost:3000/second/${fullTask.PrimaryID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
   .then(res2 => res2.json())
   .then(function(res2) {
     console.log(res2)
@@ -216,11 +181,7 @@ confirmEditvalues= (pId) => {
   console.log(this.state.Name)
   console.log(this.state.ParentID)
   console.log(pId)
-<<<<<<< HEAD
   fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/editTask', {
-=======
-  fetch('http://localhost:3000/editTask', {
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -283,29 +244,17 @@ statusCounter=async(finalData)=> {
 
 callAPI=async()=> {
   var finalData= []
-<<<<<<< HEAD
   fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/primain')
-=======
-  fetch('http://localhost:3000/primain')
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
   .then(result => result.json())
   .then(result =>
     Promise.all(
       result.map(result =>
-<<<<<<< HEAD
         fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${result.PrimaryID}`)
-=======
-        fetch(`http://localhost:3000/second/${result.PrimaryID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
           .then(res1 => res1.json())
           .then(res1 =>
             Promise.all(
               res1.map(res1 =>
-<<<<<<< HEAD
                 fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${res1.PrimaryID}`)
-=======
-                fetch(`http://localhost:3000/second/${res1.PrimaryID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
                   .then(res2 => res2.json())
                 )
               )
@@ -414,11 +363,7 @@ render(){
 }
 }
 const changeStatusPar = ({idget,status})=> {
-<<<<<<< HEAD
   fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/changeStatus-Par', {
-=======
-  fetch('http://localhost:3000/changeStatus-Par', {
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -431,11 +376,7 @@ const changeStatusPar = ({idget,status})=> {
 }
 
 const changeStatusPri = (idget,status)=>{
-<<<<<<< HEAD
   fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/changeStatus-Pri', {
-=======
-  fetch('http://localhost:3000/changeStatus-Pri', {
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

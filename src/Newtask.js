@@ -22,20 +22,12 @@ class Newtask extends Component {
   }
   getAcceptableIds=async()=> {
     var aID=[]
-<<<<<<< HEAD
     fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/primain')
-=======
-    fetch('http://localhost:3000/primain')
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
       .then((result)=> result.json())
       .then(result =>
         Promise.all(
           result.map(result1 =>
-<<<<<<< HEAD
             fetch(`http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/second/${result1.PrimaryID}`)
-=======
-            fetch(`http://localhost:3000/second/${result1.PrimaryID}`)
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
               .then(res1 => res1.json())
               .then(res1 =>
                 res1.forEach(function(item,index){
@@ -45,11 +37,7 @@ class Newtask extends Component {
                   )
                 )
                 )
-<<<<<<< HEAD
       fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/primain')
-=======
-      fetch('http://localhost:3000/primain')
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
         .then((result)=> result.json())
           .then(result =>
             result.forEach(function(item,index){
@@ -67,11 +55,7 @@ class Newtask extends Component {
      Description,
    } = this.state;
 
-<<<<<<< HEAD
    fetch('http://ec2-13-229-92-125.ap-southeast-1.compute.amazonaws.com:3000/create', {
-=======
-   fetch('http://localhost:3000/create', {
->>>>>>> b928289afe858df9a1eff5c5d0b61dfa33d2d9b2
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
