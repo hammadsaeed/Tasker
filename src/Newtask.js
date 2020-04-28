@@ -22,12 +22,12 @@ class Newtask extends Component {
   }
   getAcceptableIds=async()=> {
     var aID=[]
-    fetch('http://localhost:3001/primain')
+    fetch('http://localhost:3000/primain')
       .then((result)=> result.json())
       .then(result =>
         Promise.all(
           result.map(result1 =>
-            fetch(`http://localhost:3001/second/${result1.PrimaryID}`)
+            fetch(`http://localhost:3000/second/${result1.PrimaryID}`)
               .then(res1 => res1.json())
               .then(res1 =>
                 res1.forEach(function(item,index){
@@ -37,7 +37,7 @@ class Newtask extends Component {
                   )
                 )
                 )
-      fetch('http://localhost:3001/primain')
+      fetch('http://localhost:3000/primain')
         .then((result)=> result.json())
           .then(result =>
             result.forEach(function(item,index){
@@ -55,7 +55,7 @@ class Newtask extends Component {
      Description,
    } = this.state;
 
-   fetch('http://localhost:3001/create', {
+   fetch('http://localhost:3000/create', {
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
